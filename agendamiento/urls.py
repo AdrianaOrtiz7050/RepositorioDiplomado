@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.contrib.auth.views import LogoutView, LoginView
 from citas.views import Viendocitas, Viendoeps, Viendoperfil, Viendopaciente, Viendomedico, Insertarcita, Editarcita, Eliminarcita, Editareps, Insertareps, Eliminareps, Insertarmedico, Editarmedico, Eliminarmedico, Editarpaciente, Eliminarpaciente, Insertarpaciente, Editarperfil, Eliminarperfil, Insertarperfil
 from django.conf.urls.static import static
+from agendamiento import settings
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
