@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viendo Perfil</title>
+</head>
+<body>
+
+
+<font face="arial" size =4">
+<FOND FACE="VERDANA">
+
+<table width="600" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td colspan="7" align="center"><h2>Visualización Perfil</h2></td>
+    <tr>
+        <td align="center" bgcolor="#f0e68c"> Id</td>
+        <td align="center" bgcolor="#f0e68c"> Genero</td>
+        <td align="center" bgcolor="#f0e68c"> Documento</td>
+        <td align="center" bgcolor="#f0e68c"> Telefono</td>
+        <td align="center" bgcolor="#f0e68c"> Fecha de Nacimiento</td>
+        {% if perms.citas.change_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Editar</td>
+        {% endif %}
+        {% if perms.citas.del_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Eliminar</td>
+        {% endif %}
+
+
+    </tr>
+    </thead>
+    <tbody>
+        {% for profile in object_list %}
+            <tr>
+            <td align="center">{{ profile.id }}</td>
+            <td align="center">{{ profile.get_genero_display}}</td>
+            <td align="center">{{ profile.documento }}</td>
+            <td align="center">{{ profile.telefono}}</td>
+            <td align="center">{{ profile.nacimiento }}</td>
+            <td align="center"><input type="button" onclick="location.href='/editarperfil/{{ profile.id }}'" value="Editar"></td>
+            <td align="center"><input type="button" onclick="location.href='/eliperfil/{{ profile.id }}'" value="Eliminar"></td>
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<table width="600" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td align="center"><input type="button" onclick="location.href='http://localhost:8000/insertarperfil/#'" value="Agregar Paciente">
+    <td align="center"><input type="button" onclick="location.href='/login'" value="Cerrar Sesión"></td>
+
+    <tr>
+</FOND>
+</font>
+</body>
+</html>

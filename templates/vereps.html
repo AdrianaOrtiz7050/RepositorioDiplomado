@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viendo Eps</title>
+</head>
+<body>
+
+
+<font face="arial" size =4">
+<FOND FACE="VERDANA">
+
+<table width="300" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td colspan="6" align="center"><h2>Visualización Eps</h2></td>
+    <tr>
+        <td align="center" bgcolor="#f0e68c"> Id</td>
+        <td align="center" bgcolor="#f0e68c"> Eps</td>
+        {% if perms.citas.change_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Editar</td>
+        {% endif %}
+        {% if perms.citas.del_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Eliminar</td>
+        {% endif %}
+
+    </tr>
+    </thead>
+    <tbody>
+        {% for eps in object_list %}
+            <tr>
+            <td align="center">{{ eps.id }}</td>
+            <td align="center">{{ eps.eps}}</td>
+            {% if perms.citas.change_agendamiento %}
+            <td align="center"><input type="button" onclick="location.href='/editareps/{{ eps.id }}'" value="Editar"></td>
+            {% endif %}
+            {% if perms.citas.del_agendamiento %}
+            <td align="center"><input type="button" onclick="location.href='/elieps/{{ eps.id }}'" value="Eliminar"></td>
+            {% endif %}
+
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<table width="300" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td align="center"><input type="button" onclick="location.href='http://localhost:8000/insertareps/#'" value="Agregar Eps">
+    <td align="center"><input type="button" onclick="location.href='/logout'" value="Cerrar Sesión"></td>
+
+    <tr>
+
+</table>
+</FOND>
+</font>
+</body>
+</html>

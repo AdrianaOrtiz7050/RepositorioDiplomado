@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Medico</title>
+</head>
+<body>
+    <h2>Eliminando Medico</h2>
+    <form action="" method="post">
+        {% csrf_token %}    <!--  proteger los datos -->
+        <input type="submit" value="Eliminar">
+        <input type="button" onclick="location.href='/vermedico'" value="Cancelar">
+    </form>
+</body>
+</html>

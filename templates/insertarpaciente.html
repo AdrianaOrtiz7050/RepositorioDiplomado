@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Paciente</title>
+</head>
+<body>
+    <h2>Insertando Paciente</h2>
+    <form action="" method="post">
+        {% csrf_token %}    <!--  proteger los datos -->
+        {{ form.as_p }}     <!-- crea un formulaio generico -->
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>

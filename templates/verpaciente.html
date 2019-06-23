@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viendo Paciente</title>
+</head>
+<body>
+
+
+<font face="arial" size =4">
+<FOND FACE="VERDANA">
+
+<table width="600" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td colspan="6" align="center"><h2>Visualización Paciente</h2></td>
+    <tr>
+        <td align="center" bgcolor="#f0e68c"> Id</td>
+        <td align="center" bgcolor="#f0e68c"> Eps</td>
+        <td align="center" bgcolor="#f0e68c"> Usuario</td>
+        {% if perms.citas.change_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Editar</td>
+        {% endif %}
+        {% if perms.citas.del_agendamiento %}
+        <td align="center" bgcolor="#f0e68c">Eliminar</td>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+        {% for paciente in object_list %}
+            <tr>
+            <td align="center">{{ paciente.id }}</td>
+            <td align="center">{{ paciente.eps}}</td>
+            <td align="center">{{ paciente.user}}</td>
+            <td align="center"><input type="button" onclick="location.href='/editarpaciente/{{ paciente.id }}'" value="Editar"></td>
+            <td align="center"><input type="button" onclick="location.href='/elipaciente/{{ paciente.id }}'" value="Eliminar"></td>
+
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<table width="600" border="1" bordercolor="black"  border="5" align="center">
+    <thead>
+    <td align="center"><input type="button" onclick="location.href='http://localhost:8000/insertarpaciente/#'" value="Agregar Paciente">
+    <td align="center"><input type="button" onclick="location.href='/login'" value="Cerrar Sesión"></td>
+
+    <tr>
+
+</table>
+</FOND>
+</font>
+</body>
+</html>

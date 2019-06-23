@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <h2>Editando Perfil</h2>
+    <form action="" method="post">
+        {% csrf_token %}    <!--  proteger los datos -->
+        {{ form.as_p }}     <!-- crea un formulaio generico -->
+        <input type="submit" value="Guardar">
+        <input type="button" onclick="location.href='/vermedico'" value="Cancelar">
+    </form>
+</body>
+</html>
