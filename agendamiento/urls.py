@@ -45,7 +45,8 @@ urlpatterns = [
     path('elimedico/<int:pk>/', Eliminarmedico.as_view()),
 
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', LogoutView.as_view())
+    path('logout/', LogoutView.as_view()),
+
 
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

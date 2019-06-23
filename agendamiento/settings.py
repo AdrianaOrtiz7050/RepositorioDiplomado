@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    
+
 ]
 
 ROOT_URLCONF = 'agendamiento.urls'
@@ -141,11 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL= '/vercita'
 LOGOUT_REDIRECT_URL= '/login'
-STATICFILES_DIRS = [
+"""STATICFILES_DIRS = [
 os.path.join(BASE_DIR, "static") ]
-STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "Login_v1") ]
+"""
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-
-
