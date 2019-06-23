@@ -25,7 +25,7 @@ SECRET_KEY = 'owjg!%una$%v9x+f^jdgjghf0n+s&=4wuyoe=@roe67ok#48zf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['diplomadorepositorios.herokuapp.com']
 
 
 # Application definition
