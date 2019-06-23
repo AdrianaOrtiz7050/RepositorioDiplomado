@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'whitenoise.storage.CompressedStaticFilesStorage',
+    
 ]
 
 ROOT_URLCONF = 'agendamiento.urls'
