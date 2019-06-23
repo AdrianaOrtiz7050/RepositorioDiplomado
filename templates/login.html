@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Iniciando Sesión</h2>
-    <form action="index.html" method="post">
+    <form action="" method="post">
         {% csrf_token %}    <!--  proteger los datos -->
         {{ form.as_p }}
         <input type="submit" value="Iniciar Sesión">
