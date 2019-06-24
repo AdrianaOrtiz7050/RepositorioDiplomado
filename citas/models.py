@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from datetime import date
 # Create your models here.
 
 class Profile (models.Model):
@@ -60,7 +60,7 @@ class Agendamiento (models.Model):
               (2, "Odontologia"),
               (3, "Laboratorios"),)
     fecha=models.DateField()
-    hora=models.TimeField()
+    hora= models.TimeField(['%I:%H %p'], blank=True, null=True)
     tipocita=models.SmallIntegerField(choices=Tipocita)
     medico=models.ForeignKey(Medico, on_delete=models.PROTECT)
     paciente=models.ForeignKey(Paciente, on_delete=models.PROTECT)
