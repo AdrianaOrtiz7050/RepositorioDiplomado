@@ -59,7 +59,8 @@ class Agendamiento (models.Model):
     Tipocita=((1, "Medicina General"),
               (2, "Odontologia"),
               (3, "Laboratorios"),)
-    fecha = models.DateField()
+    fecha=models.DateField()
+    hora= models.TimeField()
     tipocita=models.SmallIntegerField(choices=Tipocita)
     medico=models.ForeignKey(Medico, on_delete=models.PROTECT)
     paciente=models.ForeignKey(Paciente, on_delete=models.PROTECT)
