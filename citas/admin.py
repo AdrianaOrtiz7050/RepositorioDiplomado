@@ -7,7 +7,7 @@ from citas.models import Agendamiento, User, Paciente, Medico, Eps, Profile #lla
 
 @admin.register(Agendamiento)
 class Adminagendamiento(admin.ModelAdmin):
-   list_display = ('id','tipocita', 'fecha', 'hora', 'nombre_medico', 'nombre_paciente',)
+   list_display = ('id','tipocita', 'fecha', 'nombre_medico', 'nombre_paciente',)
    list_filter = ('tipocita',)
    def nombre_medico(self, medicon):
        return "%s %s" % (medicon.medico.user.first_name , medicon.medico.user.last_name)

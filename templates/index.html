@@ -32,13 +32,19 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
+                    <a href="{% url 'vercita' %}"><b>Medi Citas</b> Iniciar Sesión</a>
+
+
 					<img src="{% static 'images/img-01.png'%}" alt="Imagen">
 				</div>
 
 				<form class="login100-form validate-form">
+
 					<span class="login100-form-title">
 						Bienvenido
 					</span>
+                  <form action=" " method="post">
+                  {% csrf_token %}
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Usuario">
