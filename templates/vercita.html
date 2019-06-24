@@ -17,6 +17,7 @@
         <td align="center" bgcolor="#f0e68c"> Id</td>
         <td align="center" bgcolor="#f0e68c"> Tipo Cita</td>
         <td align="center" bgcolor="#f0e68c" >Fecha de la cita</td>
+        <td align="center" bgcolor="#f0e68c">Hora de la cita</td>
         <td align="center" bgcolor="#f0e68c">Medico</td>
         <td align="center" bgcolor="#f0e68c">Paciente</td>
         {% if perms.citas.change_agendamiento %}
@@ -34,6 +35,7 @@
             <td align="center">{{ agendamiento.id }}</td>
             <td align="center">{{ agendamiento.get_tipocita_display }}</td>
             <td align="center">{{ agendamiento.fecha }}</td>
+            <td align="center">{{ agendamiento.hora }}</td>
             <td align="center">{{ agendamiento.medico }}</td>
             <td align="center">{{ agendamiento.paciente }}</td>
             {% if perms.citas.change_agendamiento %}
